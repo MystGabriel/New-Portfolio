@@ -14,9 +14,15 @@ cancelBtn.onclick = () => {
     menuBtn.classList.remove("hide");
 }
 
-window.onscroll = () => {
-    this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
-}
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if(this.scrollY > 20){
+           $('.navbar').addClass("sticky");
+        }else{
+           $('.navbar').removeClass("sticky");
+        }
+    });
+});
 
 // TEXT ANIMATION
 var typed = new Typed(".typing-text", {
@@ -43,3 +49,11 @@ var loader = document.getElementById("preloader");
 window.addEventListener("load", function(){
     loader.style.display = "none";
 });
+
+// SCROLLBAR
+let progress = document.getElementById('progressbar');
+let totalHeight = document.body.scrollHeight - window.innerHeight;
+window.onscroll = function(){
+    let progressHeight = (window.pageYOffset / totalHeight) * 100;
+    progress.style.height = progressHeight + "%";
+}

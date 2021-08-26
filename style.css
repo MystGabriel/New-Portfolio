@@ -9,6 +9,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* GLOBAL */
+
 #preloader{
     width: 100%;
     height: 100vh;
@@ -21,6 +23,67 @@
     max-width: 1550px;
     margin: auto;
     padding: 0 30px;
+    width: 100%;
+    height: 100%;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: #DB3636;
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #DB3636;
+  }
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+    width: 0;
+}
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #DB3636, #00070D);
+    animation: animate 5s linear infinite;
+    z-index: 1000;
+}
+#progressbar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #DB3636, #00070D);
+    filter: blur(7px);
+}
+#progressbar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #DB3636, #00070D);
+    filter: blur(7px);
+}
+@keyframes animate{
+    0%, 100%{
+        filter: blur(0deg)
+    }
+    50%{
+        filter: blur(360deg);
+    }
 }
 
 /* NAV */
@@ -209,13 +272,7 @@
 .about{
     position: relative;
     width: 100%;
-    height: 100vh;
     background-color: #00070D;
-}
-
-.about .content{
-    width: 100%;
-    height: 100%;
 }
 
 .title{
@@ -249,7 +306,8 @@
 
 .about .about-content{
     width: 100%;
-    height: 80vh;
+    margin: 0px 0px;
+    padding: 100px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -323,6 +381,192 @@
     border: solid 7px #DB3636;
 }
 
+/* EXPERIENCE */
+.experience{
+    position: relative;
+    width: 100%;
+    background-color: #00070D;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 40px;
+}
+
+.cards .card-content{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards .card-content .title-card{
+    font-size: 30px;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.cards .card-content .card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px #DB3636;
+    border-radius: 5px;
+    background-color: #00070D;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.cards .card-content .card:hover{
+    background-color: #020a11;
+}
+
+.cards .card-content .card .hover-card{
+    display: none;
+    position: absolute;
+    padding: 20px;
+}
+
+.cards .card-content .card:hover i{
+    display: none;
+}
+
+.cards .card-content .card:hover .hover-card{
+    display: block;
+    top: 0;
+}
+
+.cards .card-content .card .hover-card .hover-title{
+    padding-bottom: 6px;
+    font-size: 20px;
+    color: #DB3636;
+}
+
+.cards .card-content .card .hover-card p{
+    color: #fff;
+}
+
+.cards .card-content .card i{
+    font-size: 60px;
+    color: #DB3636;
+}
+
+/* WORK */
+.work{
+    position: relative;
+    width: 100%;
+    background-color: #00070D;
+}
+
+.works-content{
+    width: auto;
+}
+
+.works-content .work-project{
+    padding-bottom: 50px;
+}
+
+.works-content .work-project .works-line_1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.works-content .work-project .works-line_1 .bxs-folder-open{
+    font-size: 50px;
+    color: #DB3636;
+}
+
+.works-content .work-project .works-line_1 .title-works{
+    display: flex;
+    align-items: center;
+}
+
+.works-content .work-project .works-line_1 .title-works h3{
+    font-size: 20px;
+    padding-left: 10px;
+    color: #fff;
+    font-weight: 100;
+}
+
+.works-content .work-project .works-line_1 i{
+    cursor: pointer;
+    font-size: 30px;
+    color: #DB3636;
+    transition: all .3s ease;
+}
+
+.works-content .work-project .works-line_1 i:hover{
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #DB3636;
+}
+
+.works-content .work-project .work-line_2 p{
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+/* CONTANCT */
+.contact{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #00070D;
+}
+
+.contact-content .contact-info .contact-title h3{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.contact-content .contact-info .contact-text p{
+    color: #fff;
+    font-size: 16px;
+}
+
+.personal-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.personal-info .contact-icon{
+    display: flex;
+    align-items: center;
+    min-width: 230px;
+    padding: 10px 0;
+}
+
+.personal-info .contact-icon i{
+    font-size: 40px;
+    padding-right: 20px;
+    color: #DB3636;
+}
+
+.personal-info .contact-icon .info h5{
+    color: #DB3636;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.personal-info .contact-icon .info p{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1375px){
     .about-img img{
@@ -360,7 +604,7 @@
         width: 100%;
         height: 100vh;
         max-width: 400px;
-        background-color: #222;
+        background-color: #00070D;
         display: block;
         padding: 40px 0;
         text-align: center;
@@ -407,26 +651,14 @@
         width: 100%;
     }
 
-    .about-img img{
-        width: 90%;
+    .about .about-content{
+        padding: 0 10px;
     }
 }
 
 @media (max-width: 702px){
-    .home .home-text h3{
-        font-size: 20px;
-    }
-
-    .home .home-text h1, .name, .typing-dot{
-        font-size: 65px;
-    }
-
     .home .home-text h2{
         font-size: 40px;
-    }
-
-    .home .home-text p{
-        font-size: 15px;
     }
 }
 
@@ -437,16 +669,8 @@
 }
 
 @media (max-width: 458px){
-    .home .home-text h1, .name, .typing-dot{
-        font-size: 60px;
-    }
-
     .home .home-text h2{
         font-size: 24px;
-    }
-
-    .home .home-text p{
-        font-size: 13px;
     }
 }
 
